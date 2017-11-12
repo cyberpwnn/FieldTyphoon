@@ -24,22 +24,13 @@ public class Main
 		for(int i = 0; i < k; i++)
 		{
 			String vf = "";
-			int rnum = (int) (Math.random() * k * 10);
-
 			for(int j = 0; j < 4; j++)
 			{
 				char c = Alphabet.getAlphabet().get((int) ((Alphabet.getAlphabet().size() - 1) * Math.random()));
-				vf += c;
+				vf += (Math.random() > 0.5) ? c : Character.toUpperCase(c);
 			}
 
 			long t = System.currentTimeMillis() - ms;
-			vf += rnum + "";
-
-			for(int j = 0; j < 2; j++)
-			{
-				char c = Alphabet.getAlphabet().get((int) ((Alphabet.getAlphabet().size() - 1) * Math.random()));
-				vf += c;
-			}
 
 			if(t % 500 == 0)
 			{
